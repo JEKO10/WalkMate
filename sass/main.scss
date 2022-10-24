@@ -1,21 +1,14 @@
-@import "config";
-@import "header";
-@import "about";
-@import "customers";
-@import "end";
-@import "register";
-@import "login";
-@import "dashboard";
-@import "contact";
-@import "error";
-@import "footer";
-@import "sidebar";
-@import "responsive";
+@import "config", "header", "about", "customers", "end", "register", "login",
+  "dashboard", "contact", "error", "footer", "sidebar", "responsive";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
