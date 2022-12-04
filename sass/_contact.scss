@@ -3,7 +3,7 @@
   font-family: $primaryFont;
 
   nav {
-    background-color: #003d66;
+    background-color: $secondaryColor;
     @include flex(space-between, center);
     padding: 30px 40px;
 
@@ -26,7 +26,7 @@
 
         &:hover {
           background-color: #fff;
-          color: #003d66;
+          color: $secondaryColor;
         }
       }
     }
@@ -38,7 +38,7 @@
     padding: 40px 0;
 
     span {
-      color: #01a3a5;
+      color: $primaryColor;
       text-transform: uppercase;
     }
   }
@@ -68,7 +68,7 @@
 
           span {
             text-transform: uppercase;
-            color: #01a3a5;
+            color: $primaryColor;
             font-weight: 700;
           }
         }

@@ -1,7 +1,7 @@
 .end {
   position: relative;
   height: 900px;
-  font-family: "Noto Serif Display", serif;
+  font-family: $secondaryFont;
   background: url("./images/end.jpg") center/cover no-repeat;
   overflow-x: hidden;
 

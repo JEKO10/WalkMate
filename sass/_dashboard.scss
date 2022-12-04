@@ -3,7 +3,7 @@
   font-family: $primaryFont;
 
   nav {
-    background-color: #003d66;
+    background-color: $secondaryColor;
     @include flex(space-between, center);
     padding: 30px 40px;
 
@@ -30,7 +30,7 @@
 
       &:hover {
         background-color: #fff;
-        color: #003d66;
+        color: $secondaryColor;
       }
     }
 
@@ -44,7 +44,7 @@
 
       &:hover {
         background-color: #fff;
-        color: #003d66;
+        color: $secondaryColor;
       }
     }
   }

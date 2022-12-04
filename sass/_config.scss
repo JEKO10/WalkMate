@@ -1,4 +1,7 @@
+$primaryColor: #01a3a5;
+$secondaryColor: #003d66;
 $primaryFont: "Work Sans", sans-serif;
+$secondaryFont: "Noto Serif Display", serif;
 
 @mixin flex($justify, $align) {
   display: flex;

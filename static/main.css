@@ -84,6 +84,7 @@ header .hero h1 span {
 header .hero p {
   font-size: 1.2rem;
   max-width: 550px;
+  padding-right: 20px;
 }
 header .hero p span {
   text-transform: uppercase;
@@ -91,7 +92,8 @@ header .hero p span {
   font-weight: 900;
 }
 header .hero img {
-  width: 50%;
+  width: 45%;
+  border-radius: 20px;
 }
 
 .about {
@@ -307,11 +309,37 @@ header .hero img {
   text-transform: capitalize;
   font-weight: normal;
 }
-.login form button,
-.registerPage form button {
+.login button,
+.registerPage button {
   background: #01a3a5;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+}
+.login #backHome,
+.registerPage #backHome {
+  background: #01a3a5;
+  color: #fff;
+  font-size: 2rem;
+  margin-left: 20px;
+  padding: 15px 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.login #backHome:hover,
+.registerPage #backHome:hover {
+  color: #003d66;
+}
+.login p,
+.registerPage p {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+.login p a,
+.registerPage p a {
+  color: #01a3a5;
 }
 
 .dashboardBody {
@@ -546,13 +574,12 @@ header .hero img {
   background-color: #01a3a5;
   padding: 10px 20px;
   border-radius: 10px;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+  border: 3px solid #01a3a5;
 }
 .error a:hover {
-  text-decoration: underline;
   background: none;
-  border: 2px solid #01a3a5;
 }
 
 footer {
@@ -605,7 +632,7 @@ footer ul a:hover {
 }
 
 .sidebar {
-  background-color: #003d66;
+  background-color: rgba(0, 61, 102, 0.9);
   min-height: 100vh;
   min-width: 50vw;
   position: fixed;
@@ -746,9 +773,6 @@ footer ul a:hover {
   header .hero p {
     font-size: 1rem;
   }
-  header .hero img {
-    width: 55%;
-  }
   .about {
     padding: 30px 50px;
   }
@@ -883,6 +907,7 @@ footer ul a:hover {
   header .hero p {
     font-size: 1.2rem;
     max-width: 750px;
+    padding-right: 0;
   }
   header .hero img {
     width: 100%;

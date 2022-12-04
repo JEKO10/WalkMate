@@ -19,7 +19,7 @@
     text-align: center;
 
     span {
-      color: #01a3a5;
+      color: $primaryColor;
     }
   }
 
@@ -30,7 +30,7 @@
 
     span {
       text-transform: uppercase;
-      color: #01a3a5;
+      color: $primaryColor;
       font-weight: 600;
     }
   }

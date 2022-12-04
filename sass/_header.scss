@@ -29,10 +29,10 @@ header {
         text-transform: uppercase;
         font-family: $primaryFont;
         font-weight: 500;
-        border: 3px solid #01a3a5;
+        border: 3px solid $primaryColor;
         border-radius: 50px;
         cursor: pointer;
-        background-image: linear-gradient(#01a3a5, #01a3a5),
+        background-image: linear-gradient($primaryColor, $primaryColor),
           linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
         background-size: 0 100%, auto;
         background-repeat: no-repeat;
@@ -56,30 +56,25 @@ header {
       padding-bottom: 30px;
 
       span {
-        color: #01a3a5;
+        color: $primaryColor;
       }
     }
 
     p {
       font-size: 1.2rem;
       max-width: 550px;
+      padding-right: 20px;
 
       span {
         text-transform: uppercase;
-        color: #01a3a5;
+        color: $primaryColor;
         font-weight: 900;
       }
     }
 
-    // .img {
-    //   height: 400px;
-    //   width: 600px;
-    //   background: linear-gradient(rgba(138, 56, 56, 0.1), rgba(0, 0, 0, 0.3)),
-    //     url("./hikingPhoto.jpg") center/cover no-repeat;
-    //   border-radius: 10px;
-    // }
     img {
-      width: 50%;
+      width: 45%;
+      border-radius: 20px;
     }
   }
 }

@@ -20,15 +20,14 @@
     font-size: 2rem;
     margin: 2rem 0;
     text-decoration: none;
-    background-color: #01a3a5;
+    background-color: $primaryColor;
     padding: 10px 20px;
     border-radius: 10px;
-    transition: all 1s ease;
+    transition: all 500ms ease;
+    border: 3px solid $primaryColor;
 
     &:hover {
-      text-decoration: underline;
       background: none;
-      border: 2px solid #01a3a5;
     }
   }
 }

@@ -18,6 +18,7 @@ block title %} Walkmate - Register {% endblock %} {% block styles %} {{super()}}
   </head>
   <body>
     <section class="registerPage">
+      <a href="{{ url_for('index') }}" id="backHome">Back Home</a>
       <form method="POST" action="/register">
         <h2>Register</h2>
         {{ form.hidden_tag() }} {{ wtf.form_field(form.username) }} {{
@@ -25,6 +26,14 @@ block title %} Walkmate - Register {% endblock %} {% block styles %} {{super()}}
         wtf.form_field(form.facebook) }} {{ wtf.form_field(form.location) }}
         <button class="btn btn-lg btn-block" type="submit">Register</button>
       </form>
+      <p>
+        <a href="{{ url_for('login') }}">Already have an account?</a>
+      </p>
+      {% if isTaken %}
+      <p>Username or email already taken!</p>
+      {% else %}
+      <p></p>
+      {% endif %}
     </section>
   </body>
 </html>

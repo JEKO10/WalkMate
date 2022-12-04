@@ -6,7 +6,7 @@ from wtforms.validators import InputRequired, Email, Length
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
-
+from sqlalchemy import exc
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "Thisissecreykeywhichissecret"
@@ -78,19 +78,25 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
+    isTaken = False
 
     if form.validate_on_submit():
         hashed_password = generate_password_hash(
             form.password.data, method='sha256')
-        new_user = User(username=form.username.data, email=form.email.data,
-                        location=form.location.data,  password=hashed_password,
-                        facebook=form.facebook.data)
-        db.session.add(new_user)
-        db.session.commit()
+        try:
+            new_user = User(username=form.username.data, email=form.email.data,
+                            location=form.location.data,  password=hashed_password,
+                            facebook=form.facebook.data)
+            db.session.add(new_user)
+            db.session.commit()
+        except exc.IntegrityError:
+            db.session.rollback()
+            isTaken = True
+            return redirect(request.referrer)
 
         return redirect(url_for('login'))
 
-    return render_template("register.html", form=form)
+    return render_template("register.html", form=form, isTaken=isTaken)
 
 
 @app.route("/dashboard")
