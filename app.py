@@ -70,7 +70,7 @@ def login():
                 login_user(user, remember=form.remember.data)
                 return redirect(url_for('dashboard'))
 
-        return redirect(url_for('error'))
+        return redirect(url_for('loginError'))
 
     return render_template("login.html", form=form)
 
@@ -78,7 +78,6 @@ def login():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
-    isTaken = False
 
     if form.validate_on_submit():
         hashed_password = generate_password_hash(
@@ -91,12 +90,11 @@ def register():
             db.session.commit()
         except exc.IntegrityError:
             db.session.rollback()
-            isTaken = True
-            return redirect(request.referrer)
+            return redirect(url_for('registerError'))
 
         return redirect(url_for('login'))
 
-    return render_template("register.html", form=form, isTaken=isTaken)
+    return render_template("register.html", form=form)
 
 
 @app.route("/dashboard")
@@ -110,9 +108,14 @@ def dashboard():
     return render_template('dashboard.html', users=users, name=current_user.username, userLocation=userLocation, inputValue=inputValue)
 
 
-@app.route("/error")
-def error():
-    return render_template("error.html")
+@app.route("/loginError")
+def loginError():
+    return render_template("loginError.html")
+
+
+@app.route("/registerError")
+def registerError():
+    return render_template("registerError.html")
 
 
 @app.route("/contact")
