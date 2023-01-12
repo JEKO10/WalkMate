@@ -1,6 +1,6 @@
 <h1 align="center">
-  WalkMate (Full-stack app)
-  <br>
+  WalkMate<br>
+  (Full-stack app)
 </h1>
 <br>
 
